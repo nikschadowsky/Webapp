@@ -1,9 +1,19 @@
 import { createApp } from 'vue'
 import App from './App.vue' 
-import VueObserveVisibility from 'vue-observe-visibility'
+
+const app = createApp(App)
+
+import { ObserveVisibility } from 'vue-observe-visibility';
+app.directive('observe-visibility', {
+  beforeMount: (el, binding, vnode) => {
+    vnode.context = binding.instance;
+    ObserveVisibility.bind(el, binding, vnode);
+  },
+  update: ObserveVisibility.update,
+  unmounted: ObserveVisibility.unbind,
+});
 
 import './assets/base.css'
 
-const app = createApp(App)
-app.use(VueObserveVisibility)
+
 app.mount("#app")
