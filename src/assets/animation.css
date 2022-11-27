@@ -1,0 +1,25 @@
+:root{
+    --blink-animation: blink .8s infinite step-end;
+    --default-hover-transition: color .3s ease; 
+}
+@keyframes typing-anim {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        color: var(--default-hover)
+    }
+
+    50% {
+        color: transparent
+    }
+}

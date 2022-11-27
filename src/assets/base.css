@@ -4,8 +4,9 @@
     --background-color: #101010;
     --accent-color: #00bdff;
     --secondary-color: #0000ff5A;
+    --default-hover: white;
     font-size: 18pt;
-    --max-site-width: 1200px;
+    --max-site-width: 1600px;
     --header-height: 2.25rem;
     --max-indentation: 200px;
     --max-content-width: calc(var(--max-site-width) - 2* var(--max-indentation));
@@ -18,35 +19,16 @@
     user-select: none;
 
     --color-gradient: radial-gradient(circle, var(--secondary-color) 10%, var(--background-color) 100%);
+
+    text-decoration: none;
+
+    --swiper-theme-color: var(--accent-color);
+    --swiper-theme-color-hover: white; 
+
+    --max-galery-width: var(--max-content-width);
+    --max-galery-height: 600px;
 }
 
-::-webkit-scrollbar {
-    width: 16px;
-
-}
-
-::-webkit-scrollbar-track {
-    opacity: 0;
-
-}
-
-
-::-webkit-scrollbar-thumb {
-    width: 16px;
-    background-color: var(--secondary-color);
-    
-    transition-property: background-color;
-    transition:  .5s ease;
-    
-    border: 4px solid transparent;
-    border-radius: 8px;
-    background-clip: padding-box;
-
-}
-
-::-webkit-scrollbar-corner{
-    background: rgba(0,0,0,0);
-}
 
 
 * {
@@ -56,24 +38,3 @@
     font-family: 'PT Mono', monospace;
 }
 
-@keyframes typing-anim {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
-}
-
-@keyframes blink {
-
-    from,
-    to {
-        color: white
-    }
-
-    50% {
-        color: transparent
-    }
-}
