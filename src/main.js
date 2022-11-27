@@ -14,6 +14,7 @@ app.directive('observe-visibility', {
 });
 
 import './assets/base.css'
-
+import './assets/animation.css'
+import './assets/scrollbar.css'
 
 app.mount("#app")
