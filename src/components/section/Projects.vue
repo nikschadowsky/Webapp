@@ -18,10 +18,21 @@ export default {
 <template>
     <div class="projects">
         <HeaderSection>
-            ProjectsTitel
+            My Projects
         </HeaderSection>
         <MainSection>
-            <Gallery :items="['src/projects_test.png','src/projects_test_2.png']" :descriptions="['Test1', 'Test2']">
+            <Gallery :items="[
+                
+                {
+                    path:'src/projects_test_2.png',
+                    description:'This is my Project, where I develope this Website',
+                    href:'https://github.com/nikschadowsky/webapp'
+                },{
+                    path:'src/webapp_project.png',
+                    description:'This is my Project, where I develope this Website',
+                    href:'https://github.com/nikschadowsky/webapp'
+                }
+            ]">
             </Gallery>
         </MainSection>
     </div>
