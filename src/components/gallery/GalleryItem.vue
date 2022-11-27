@@ -37,7 +37,6 @@ max-width: 80%;
 #btn-wrapper{
     display: flex;
     max-width: var(--max-content-width);
-    outline: 1px green solid;
 }
 
 

@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container"> 
         <div class="content">
             <slot></slot>
         </div>
@@ -25,17 +25,16 @@ export default {
     height: 100vh;
     width: 100%;
 
+
     display: flex;
     align-items: center;
     justify-content: left;
 
-    outline: 1px yellow solid;
 }
 
 .content { 
    
     width: var(--max-content-width);
     margin: 0 var(--max-indentation);
-    outline: 1px red solid;
 }
 </style>

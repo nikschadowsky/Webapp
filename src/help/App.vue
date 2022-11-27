@@ -42,7 +42,7 @@ header {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-    color: white;
+    color: var(--default-hover);;
   }
 }
 </style>

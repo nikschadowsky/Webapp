@@ -103,6 +103,7 @@ export default {
 <style>
 .header {
 
+    z-index: 12;
     display: inline;
     position: fixed;
     height: var(--header-height);
@@ -148,17 +149,17 @@ export default {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+    transition: var(--default-hover-transition);
 }
 
 .nav-element a:hover {
-    color: white;
+    color: var(--default-hover);
 }
 
 .nav-element a:hover::after {
-    color: white;
+    color: var(--default-hover);
     opacity: 100%;
-    content: "_";
-    animation: blink .8s infinite step-end;
+    animation: var(--blink-animation)
 }
 
 .nav-element a::after {

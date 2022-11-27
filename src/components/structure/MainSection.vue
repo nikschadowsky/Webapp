@@ -13,7 +13,7 @@
 <style>
 
 section{
-    color: whitesmoke;
+    color: var(--default-hover);
 }
 
 </style>

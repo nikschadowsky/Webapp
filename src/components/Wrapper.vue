@@ -19,7 +19,9 @@ export default{
     
 },
     methods:{
-        
+        test(isVisible, entry){
+            console.log("visible");
+        }
     }
 
 }
@@ -31,8 +33,8 @@ export default{
         <Container>
             <Intro></Intro>
         </Container>
-        <Container>
-            <Projects></Projects>
+        <Container >
+            <Projects v-observe-visibility="test"></Projects>
         </Container>
 
     </div>
