@@ -18,7 +18,7 @@ export default {
 <template>
     <div class="projects">
         <HeaderSection>
-            My Projects
+            Projekte
         </HeaderSection>
         <MainSection>
             <Gallery :items="[

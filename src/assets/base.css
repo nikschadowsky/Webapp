@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@0;1&display=swap');
 
 :root {
     --background-color: #101010;
     --accent-color: #00bdff;
     --secondary-color: #0000ff5A;
     --default-hover: white;
+    --default-text: white;
+    --comment-color: gray;
     font-size: 18pt;
     --max-site-width: 1600px;
     --header-height: 2.25rem;
@@ -25,7 +25,7 @@
     text-decoration: none;
 
     --swiper-theme-color: var(--accent-color);
-    --swiper-theme-color-hover: white; 
+    --swiper-theme-color-hover: white;
 
     --max-galery-width: var(--max-content-width);
     --max-galery-height: 600px;
@@ -37,34 +37,46 @@
     top: 0;
     margin: 0;
     padding: 0;
-   font-family: 'PT Mono', monospace; 
+    font-family: 'Courier Prime', monospace;
 }
 
-span.colored  {
+span.colored, a.colored{
     color: var(--accent-color);
 }
+
 span.cursive  {
-    font-family: 'Source Code Pro', monospace; 
-    font-style: italic ;
+    font-family: 'Courier Prime', monospace;
+    font-style: italic;
+    color: var(--comment-color);
 }
+
 .link {
-    
+
     color: var(--accent-color);
     text-decoration: none;
     cursor: pointer;
     transition: var(--default-hover-transition);
 
-}.link:hover{
+}
+
+.link:hover {
     color: var(--default-hover);
 }
 
 
-.carret-blink-anim::after{
+.carret-blink-anim::after {
     content: "_";
     opacity: 0;
 }
-.carret-blink-anim:hover::after{
+
+.carret-blink-anim:hover::after {
     color: var(--default-hover);
     opacity: 100%;
     animation: var(--blink-animation);
+}
+.indented{
+    display: inline-block;
+  
+    margin-left: 100px;
+    
 }

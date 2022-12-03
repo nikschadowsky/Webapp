@@ -37,7 +37,7 @@ export default {
     methods: {
 
     },
-     setup() {
+    setup() {
 
         return {
             modules: [Navigation, Pagination],
@@ -51,8 +51,8 @@ export default {
 
 <template>
 
-    <Swiper :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }" :navigation="(items.length>1)" loop
-        :allow-touch-move="false" :initial-slide="items.length/2" >
+    <Swiper :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }" :navigation="(items.length > 1)"
+        loop :allow-touch-move="false" :initial-slide="items.length / 2">
 
         <SwiperSlide v-for="n in items.length">
 
@@ -61,8 +61,9 @@ export default {
 
 
             <div class="current-project-desc">
-                <span class="project-title">My Webapp Project</span><a :href="items[n - 1].href" target="_blank" rel="noopener noreferrer"
-                    draggable="false" class="learn-more link carret-blink-anim">&lt;learn more/&gt;</a>
+                <span class="project-title">My Webapp Project</span><a :href="items[n - 1].href" target="_blank"
+                    rel="noopener noreferrer" draggable="false" class="learn-more link carret-blink-anim">&lt;learn
+                    more/&gt;</a>
             </div>
 
         </SwiperSlide>
@@ -80,11 +81,13 @@ export default {
     padding: 10px;
     border-top: 1px solid gray;
 }
-.project-title::before{
+
+.project-title::before {
     content: "_";
     opacity: 0;
 }
-.learn-more{
+
+.learn-more {
     margin-left: auto;
 }
 
@@ -98,7 +101,7 @@ export default {
     object-fit: cover;
     object-position: 0 50%;
 
-    
+
 }
 
 /** overwriting default swiper behaviour  */
@@ -145,5 +148,4 @@ export default {
 .swiper {
     border: 1px solid grey;
 }
-
 </style>

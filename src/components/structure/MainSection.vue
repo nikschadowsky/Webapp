@@ -13,7 +13,7 @@
 <style>
 
 section{
-    color: var(--default-hover);
+    color: var(--default-text);
 }
 
 </style>

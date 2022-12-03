@@ -21,8 +21,21 @@ export default {
     </HeaderSection>
     <MainSection>
         <span class="cursive">
-            Heyho! <br> Ich bin Nik Schadowsky.
-            Seit August 2022 Dualer Student für Angewandte Informatik bei "Techniker Krankenkasse".
+            <br>
+            &lt;comment&gt;
+            <br> <br>
+
+            <span class="indented">
+                Heyho! <br> 
+                <br>Ich bin Nik Schadowsky.
+                Seit August 2022 Dualer Student für Angewandte Informatik bei <a class="colored link"
+                    href="https://www.tk.de/" target="_blank" rel="noopener noreferrer">@Techniker Krankenkasse</a>. <br><br>
+
+                Bei meinen freizeitlichen Programming-Journeys arbeite ich hauptsächlich mit Java, aber auch mit Python, HTML, JavaScript und CSS.
+            </span>
+            <br><br>
+            &lt;/comment&gt;
+
         </span>
     </MainSection>
 
