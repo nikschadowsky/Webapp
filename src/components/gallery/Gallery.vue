@@ -1,6 +1,4 @@
 <script>
-import GalleryItem from "../gallery/GalleryItem.vue";
-
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from "swiper";
 
@@ -34,8 +32,7 @@ export default {
     },
     components: {
         Swiper,
-        SwiperSlide,
-        GalleryItem
+        SwiperSlide
     },
     methods: {
 
