@@ -13,6 +13,6 @@
         color: var(--accent-color);
         padding-bottom: .5rem;
         font-weight: 700;
-        font-size: 50pt;
+        font-size: 48pt;
     }
 </style>
