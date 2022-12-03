@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap');
+
 :root {
     --background-color: #101010;
     --accent-color: #00bdff;
@@ -35,6 +37,13 @@
     top: 0;
     margin: 0;
     padding: 0;
-    font-family: 'PT Mono', monospace;
+   font-family: 'PT Mono', monospace; 
 }
 
+span.colored  {
+    color: var(--accent-color);
+}
+span.cursive  {
+    font-family: 'Source Code Pro', monospace; 
+    font-style: italic ;
+}

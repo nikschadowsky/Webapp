@@ -3,7 +3,7 @@
 import Container from "./Container.vue";
 import Intro from "./section/Intro.vue";
 import Projects from "./section/Projects.vue";
-
+import About from "./section/About.vue";
 
 export default{
 
@@ -15,6 +15,7 @@ export default{
     components:{
     Container,
     Intro,
+    About,
     Projects,
     
 },
@@ -33,6 +34,9 @@ export default{
         <Container>
             <Intro></Intro>
         </Container>
+        <Container>
+            <About></About>
+        </Container>
         <Container >
             <Projects v-observe-visibility="test"></Projects>
         </Container>
@@ -44,7 +48,6 @@ export default{
 <style scoped>
 
 #wrapper {
-
 
     height: 8000px;
     
