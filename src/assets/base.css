@@ -47,3 +47,24 @@ span.cursive  {
     font-family: 'Source Code Pro', monospace; 
     font-style: italic ;
 }
+.link {
+    
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--default-hover-transition);
+
+}.link:hover{
+    color: var(--default-hover);
+}
+
+
+.carret-blink-anim::after{
+    content: "_";
+    opacity: 0;
+}
+.carret-blink-anim:hover::after{
+    color: var(--default-hover);
+    opacity: 100%;
+    animation: var(--blink-animation);
+}

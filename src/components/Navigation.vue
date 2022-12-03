@@ -58,9 +58,6 @@ export default {
                 }
             }
         },
-        test() {
-            document.querySelector(":root").style.setProperty('--background-color','#0000FF');
-        },
         testVis(isVisible, entry) {
             console.log("TEST");
         }
@@ -81,15 +78,15 @@ export default {
 
             <li class="nav-element">
 
-                <a @click="scrollToTop" @mouseenter="startTyping" @mouseout="startErasing">{{ title + currentText
+                <a  class="link carret-blink-anim" @click="scrollToTop" @mouseenter="startTyping" @mouseout="startErasing">{{ title + currentText
                 }}/></a>
             </li>
             <li class="nav-element">
-                <a @click="test" href="https://github.com/nikschadowsky" target="_blank"
+                <a class="link carret-blink-anim" href="https://github.com/nikschadowsky" target="_blank"
                     rel="noopener noreferrer">&lt;github/&gt;</a>
             </li>
             <li class="nav-element">
-                <a href="https://twitch.tv/nikschadowsky" target="_blank" rel="noopener noreferrer">&lt;twitch/&gt;</a>
+                <a class="link carret-blink-anim" href="https://twitch.tv/nikschadowsky" target="_blank" rel="noopener noreferrer">&lt;twitch/&gt;</a>
             </li>
 
         </ul>
@@ -145,25 +142,5 @@ export default {
     margin-right: 15px;
 
 }
-.nav-element a {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--default-hover-transition);
-}
 
-.nav-element a:hover {
-    color: var(--default-hover);
-}
-
-.nav-element a:hover::after {
-    color: var(--default-hover);
-    opacity: 100%;
-    animation: var(--blink-animation)
-}
-
-.nav-element a::after {
-    content: "_";
-    opacity: 0;
-}
 </style>

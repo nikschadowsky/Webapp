@@ -44,14 +44,15 @@ export default {
         }
     },
 
+
 }
 
 </script>
 
 <template>
 
-    <Swiper :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }" :navigation="{}" loop
-        :allow-touch-move="false" :initial-slide="items.length/2">
+    <Swiper :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }" :navigation="(items.length>1)" loop
+        :allow-touch-move="false" :initial-slide="items.length/2" >
 
         <SwiperSlide v-for="n in items.length">
 
@@ -60,8 +61,8 @@ export default {
 
 
             <div class="current-project-desc">
-                My Webapp Project <a :href="items[n - 1].href" target="_blank" rel="noopener noreferrer"
-                    draggable="false" class="learn-more-ref">&lt;learn more/&gt;</a>
+                <span class="project-title">My Webapp Project</span><a :href="items[n - 1].href" target="_blank" rel="noopener noreferrer"
+                    draggable="false" class="learn-more link carret-blink-anim">&lt;learn more/&gt;</a>
             </div>
 
         </SwiperSlide>
@@ -79,26 +80,14 @@ export default {
     padding: 10px;
     border-top: 1px solid gray;
 }
-
-.learn-more-ref {
-    margin-left: auto;
-    color: var(--accent-color);
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--default-hover-transition);
-
-}.learn-more-ref:hover{
-    color: var(--default-hover);
-}
-.learn-more-ref::after{
+.project-title::before{
     content: "_";
     opacity: 0;
 }
-.learn-more-ref:hover::after{
-    color: var(--default-hover);
-    opacity: 100%;
-    animation: var(--blink-animation);
+.learn-more{
+    margin-left: auto;
 }
+
 
 .image {
     display: block;
