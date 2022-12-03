@@ -39,13 +39,10 @@ export default {
     },
     methods: {
 
-        goLeft() { }
-
-    }, setup() {
+    },
+     setup() {
 
         return {
-
-
             modules: [Navigation, Pagination],
         }
     },
@@ -57,7 +54,7 @@ export default {
 <template>
 
     <Swiper :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }" :navigation="{}" loop
-        :allow-touch-move="false">
+        :allow-touch-move="false" :initial-slide="items.length/2">
 
         <SwiperSlide v-for="n in items.length">
 

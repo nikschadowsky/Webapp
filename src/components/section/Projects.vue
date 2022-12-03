@@ -24,12 +24,8 @@ export default {
             <Gallery :items="[
                 
                 {
-                    path:'src/projects_test_2.png',
-                    description:'This is my Project, where I develope this Website',
-                    href:'https://github.com/nikschadowsky/webapp'
-                },{
                     path:'src/webapp_project.png',
-                    description:'This is my Project, where I develope this Website',
+                    description:'Mein WebApp-Projekt',
                     href:'https://github.com/nikschadowsky/webapp'
                 }
             ]">
@@ -42,5 +38,6 @@ export default {
 .projects {
     max-width: var(--max-content-width);
     
+
 }
 </style>

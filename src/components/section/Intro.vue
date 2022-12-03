@@ -13,7 +13,7 @@ export default {
         }
     },
 
-    
+
 
     components: {
         MainSection,
@@ -24,14 +24,22 @@ export default {
 </script>
 
 <template>
-    <HeaderSection>DAS ist der Titel</HeaderSection>
-    <MainSection>DAS ist der Test <br />
-        DAS ist der Test <br />
-        DAS ist der Test<br />
-        DAS ist der Test
+    <HeaderSection>Nik Schadowsky</HeaderSection>
+    <MainSection>
+        <p>
+            Techniker Krankenkasse 
+        </p>
+        <p>
+            <span class="colored">Dualer Student</span> für Angewandte Informatik
+        </p>
+        
     </MainSection>
 </template>
-
+ 
 <style>
 
+
+p {
+    padding-bottom: 10px;
+}
 </style>
