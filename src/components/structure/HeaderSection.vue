@@ -3,14 +3,14 @@
 </script>
 
 <template>
-    <h1>
+    <h1 class="colored">
         <slot></slot>
     </h1>
 </template>
 
 <style>
     h1{
-        color: var(--accent-color);
+        
         padding-bottom: .5rem;
         font-weight: 700;
         font-size: 48pt;

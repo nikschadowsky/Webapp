@@ -40,7 +40,7 @@
     font-family: 'Courier Prime', monospace;
 }
 
-span.colored, a.colored{
+.colored{
     color: var(--accent-color);
 }
 
@@ -52,11 +52,11 @@ span.cursive  {
 
 .link {
 
-    color: var(--accent-color);
     text-decoration: none;
     cursor: pointer;
     transition: var(--default-hover-transition);
 
+    white-space: nowrap;
 }
 
 .link:hover {
@@ -76,7 +76,7 @@ span.cursive  {
 }
 .indented{
     display: inline-block;
-  
-    margin-left: 100px;
-    
+    padding-left: 100px;
+    padding-right: 100px;
+    width: fit-content;
 }

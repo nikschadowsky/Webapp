@@ -76,17 +76,17 @@ export default {
     <nav class="header">
         <ul class="nav-list">
 
-            <li class="nav-element">
+            <li class="nav-element colored">
 
-                <a  class="link carret-blink-anim" @click="scrollToTop" @mouseenter="startTyping" @mouseout="startErasing">{{ title + currentText
+                <a  class="link carret-blink-anim colored" @click="scrollToTop" @mouseenter="startTyping" @mouseout="startErasing">{{ title + currentText
                 }}/></a>
             </li>
-            <li class="nav-element">
-                <a class="link carret-blink-anim" href="https://github.com/nikschadowsky" target="_blank"
+            <li class="nav-element ">
+                <a class="link carret-blink-anim colored" href="https://github.com/nikschadowsky" target="_blank"
                     rel="noopener noreferrer">&lt;github/&gt;</a>
             </li>
-            <li class="nav-element">
-                <a class="link carret-blink-anim" href="https://twitch.tv/nikschadowsky" target="_blank" rel="noopener noreferrer">&lt;twitch/&gt;</a>
+            <li class="nav-element " >
+                <a class="link carret-blink-anim colored" href="https://twitch.tv/nikschadowsky" target="_blank" rel="noopener noreferrer">&lt;twitch/&gt;</a>
             </li>
 
         </ul>
@@ -131,7 +131,6 @@ export default {
 
 .nav-element {
     margin: auto 7px;
-    color: var(--accent-color);
 }
 
 .nav-element:first-child {

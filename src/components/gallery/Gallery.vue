@@ -62,7 +62,7 @@ export default {
 
             <div class="current-project-desc">
                 <span class="project-title">My Webapp Project</span><a :href="items[n - 1].href" target="_blank"
-                    rel="noopener noreferrer" draggable="false" class="learn-more link carret-blink-anim">&lt;learn
+                    rel="noopener noreferrer" draggable="false" class="learn-more link carret-blink-anim colored">&lt;learn
                     more/&gt;</a>
             </div>
 
