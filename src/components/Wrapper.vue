@@ -4,6 +4,7 @@ import Container from "./Container.vue";
 import Intro from "./section/Intro.vue";
 import Projects from "./section/Projects.vue";
 import About from "./section/About.vue";
+import Outro from "./section/Outro.vue";
 
 export default{
 
@@ -17,11 +18,11 @@ export default{
     Intro,
     About,
     Projects,
-    
+    Outro,
 },
     methods:{
         test(isVisible, entry){
-            console.log("visible");
+            //console.log("visible");
         }
     }
 
@@ -31,14 +32,17 @@ export default{
 
 <template >
     <div id="wrapper">
-        <Container>
+        <Container :accent="'#00bdff'" :secondary="'#0000ff5A'" >
             <Intro></Intro>
-        </Container>
-        <Container>
+        </Container >
+        <Container :accent="'#00bdff'" :secondary="'#0000ff5A'">
             <About></About>
         </Container>
-        <Container >
-            <Projects v-observe-visibility="test"></Projects>
+        <Container :accent="'#bb42dd'" :secondary="'#410066'">
+            <Projects></Projects>
+        </Container>
+        <Container id="last" :accent="'#bb42dd'" :secondary="'#410066'">
+            <Outro></Outro>
         </Container>
 
     </div>
@@ -49,10 +53,15 @@ export default{
 
 #wrapper {
 
-    height: 8000px;
+    display: flex;
+    flex-direction: column;
     
     max-width: var(--max-site-width);
     margin: var(--header-height) auto 0;
 
+}
+
+#last {
+    margin-bottom: 0;
 }
 </style>

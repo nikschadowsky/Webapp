@@ -1,6 +1,6 @@
 :root{
     --blink-animation: blink .8s infinite step-end;
-    --default-hover-transition: color .3s ease; 
+    --default-hover-transition: color .7s ease ; 
 }
 @keyframes typing-anim {
     from {

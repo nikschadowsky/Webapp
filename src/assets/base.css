@@ -42,6 +42,7 @@
 
 .colored{
     color: var(--accent-color);
+    transition: color .3s ease;
 }
 
 span.cursive  {

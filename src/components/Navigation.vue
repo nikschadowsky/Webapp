@@ -126,6 +126,8 @@ export default {
     border-bottom-style: solid;
     border-image: var(--color-gradient) 1;
 
+    transition: border-image 1s ease;
+
 
 }
 

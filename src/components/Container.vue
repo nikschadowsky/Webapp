@@ -1,10 +1,36 @@
-<script >
+<script>
 
 export default {
     data() {
         return {
 
         }
+    }, props: {
+
+        accent: {
+
+            Type: String,
+            required: true,
+        },
+        secondary: {
+
+            Type: String,
+            required: true
+        }
+
+
+    }, methods: {
+
+        visibilityChanged(isVisible, entry) {
+
+            
+            if (isVisible) {
+                console.log("visible");
+                document.documentElement.style.setProperty("--accent-color", this.accent);
+                document.documentElement.style.setProperty("--secondary-color", this.secondary);
+            }
+        }
+
     }
 }
 
@@ -13,7 +39,10 @@ export default {
 <template>
     <div class="container">
         <div class="content">
+            <div class="spacer" v-observe-visibility="visibilityChanged"></div>
             <slot></slot>
+            <div class="spacer" v-observe-visibility="visibilityChanged"></div>
+
         </div>
     </div>
 </template>
@@ -25,6 +54,7 @@ export default {
     height: 100vh;
     width: 100%;
 
+    margin-bottom: 200px;
 
     display: flex;
     align-items: center;
@@ -36,5 +66,9 @@ export default {
     text-align: left;
     max-width: var(--max-content-width);
     width: 100%;
+}
+
+.spacer {
+    height: 1px;
 }
 </style>
