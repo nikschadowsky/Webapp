@@ -44,11 +44,14 @@
     color: var(--accent-color);
     transition: color .3s ease;
 }
+.comment{
+    color: var(--comment-color);
+
+}
 
 span.cursive  {
     font-family: 'Courier Prime', monospace;
     font-style: italic;
-    color: var(--comment-color);
 }
 
 .link {
