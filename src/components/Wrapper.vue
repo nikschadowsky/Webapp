@@ -5,6 +5,7 @@ import Intro from "./section/Intro.vue";
 import Projects from "./section/Projects.vue";
 import About from "./section/About.vue";
 import Outro from "./section/Outro.vue";
+import Roadmap from "./section/Roadmap.vue";
 
 export default{
 
@@ -19,6 +20,7 @@ export default{
     About,
     Projects,
     Outro,
+    Roadmap
 },
     methods:{
         test(isVisible, entry){
@@ -37,6 +39,9 @@ export default{
         </Container >
         <Container :accent="'#00bdff'" :secondary="'#0000ff5A'">
             <About></About>
+        </Container>
+        <Container :accent="'#ff0000'" :secondary="'#ff00005A'">
+            <Roadmap></Roadmap>
         </Container>
         <Container :accent="'#bb42dd'" :secondary="'#410066'">
             <Projects></Projects>
