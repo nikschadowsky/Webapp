@@ -12,6 +12,15 @@ export default{
     <HeaderSection>
         Studium-Roadmap
     </HeaderSection>
+
+    <div class="roadmap-holder">
+        test
+    </div>
+
 </template>
 <style>
+    .roadmap-holder{
+        width: 100%;
+
+    }
 </style>
