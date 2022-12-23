@@ -1,20 +1,8 @@
 
-<template>
 
-    <main>
-        <Navigation />
-
-        <Wrapper />
-
-
-        
-
-    </main>
-
-</template>
 
 <script>
-import Navigation from "./components/Navigation.vue";
+import Navigation from "./components/page-navigation/Navigation.vue";
 import Wrapper from "./components/Wrapper.vue"
 
 var darkModeOn;
@@ -35,6 +23,17 @@ export default {
 
 
 </script>
+
+<template>
+
+    <main>
+        <Navigation />
+
+        <Wrapper />
+
+    </main>
+
+</template>
 <style>
 
 body {

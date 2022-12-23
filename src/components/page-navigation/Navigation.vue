@@ -1,6 +1,5 @@
 <script>
 
-import Logo from "./Logo.vue";
 
 export default {
     data () {
@@ -62,8 +61,6 @@ export default {
             console.log("TEST");
         }
 
-    }, components: {
-        Logo
     }
 
 }
@@ -74,7 +71,7 @@ export default {
 <template>
 
     <nav class="header">
-        <ul class="nav-list">
+        <ul class="nav-list flex">
 
             <li class="nav-element colored">
 
@@ -114,7 +111,6 @@ export default {
     height: 100%;
     max-width: var(--max-site-width);
 
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;

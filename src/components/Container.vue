@@ -16,8 +16,7 @@ export default {
 
             Type: String,
             required: true
-        }
-
+        },
 
     }, methods: {
 
@@ -25,7 +24,6 @@ export default {
 
             
             if (isVisible) {
-                console.log("visible");
                 document.documentElement.style.setProperty("--accent-color", this.accent);
                 document.documentElement.style.setProperty("--secondary-color", this.secondary);
             }
@@ -37,13 +35,15 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container flex">
         <div class="content">
             <div class="spacer" v-observe-visibility="visibilityChanged"></div>
             <slot></slot>
             <div class="spacer" v-observe-visibility="visibilityChanged"></div>
 
         </div>
+
+
     </div>
 </template>
 
@@ -56,7 +56,6 @@ export default {
 
     margin-bottom: 200px;
 
-    display: flex;
     align-items: center;
     justify-content: center;
 
