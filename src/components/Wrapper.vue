@@ -31,7 +31,7 @@ export default{
 </script>
 
 <template >
-    <div id="wrapper">
+    <div id="wrapper" class="flex">
         <Container :accent="'#00bdff'" :secondary="'#0000ff5A'" >
             <Intro></Intro>
         </Container >
@@ -44,6 +44,7 @@ export default{
         <Container id="last" :accent="'#bb42dd'" :secondary="'#410066'">
             <Outro></Outro>
         </Container>
+        
 
     </div>
 
@@ -53,7 +54,6 @@ export default{
 
 #wrapper {
 
-    display: flex;
     flex-direction: column;
     
     max-width: var(--max-site-width);

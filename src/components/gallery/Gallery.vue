@@ -60,7 +60,7 @@ export default {
             <img class="image" :src="items[n - 1].path" :alt="items[n - 1].description" draggable="false">
 
 
-            <div class="current-project-desc">
+            <div class="current-project-desc flex">
                 <span class="project-title">My Webapp Project</span><a :href="items[n - 1].href" target="_blank"
                     rel="noopener noreferrer" draggable="false" class="learn-more link carret-blink-anim colored">&lt;learn
                     more/&gt;</a>
@@ -76,7 +76,6 @@ export default {
 
 <style>
 .current-project-desc {
-    display: flex;
 
     padding: 10px;
     border-top: 1px solid gray;

@@ -31,6 +31,9 @@
     --max-galery-height: 600px;
 }
 
+.debug {
+    outline: 1px solid red;
+}
 
 
 * {
@@ -38,6 +41,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier Prime', monospace;
+}
+.flex{
+    display: flex;
 }
 
 .colored{

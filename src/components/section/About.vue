@@ -20,7 +20,7 @@ export default {
         Über mich
     </HeaderSection>
     <MainSection>
-        <span class="cursive">
+        <span class="cursive comment">
             <br>
             &lt;comment&gt;<br>
             <br>
