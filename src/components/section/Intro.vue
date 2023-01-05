@@ -36,7 +36,7 @@ export default {
     </MainSection>
 </template>
  
-<style>
+<style scoped>
 
 
 p {

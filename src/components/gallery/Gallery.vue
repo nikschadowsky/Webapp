@@ -74,7 +74,7 @@ export default {
 
 </template>
 
-<style>
+<style scoped>
 .current-project-desc {
 
     padding: 10px;

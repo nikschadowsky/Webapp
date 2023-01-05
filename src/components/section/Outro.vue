@@ -39,7 +39,7 @@ export default {
 
 </template>
 
-<style>
+<style scoped>
     .outro-parent{
         flex-wrap: wrap;
     }

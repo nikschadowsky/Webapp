@@ -8,7 +8,7 @@
     </h1>
 </template>
 
-<style>
+<style scoped>
     h1{
         
         padding-bottom: .5rem;

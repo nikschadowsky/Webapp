@@ -34,7 +34,7 @@ export default {
     </div>
 </template>
 
-<style>
+<style scoped>
 .projects {
     max-width: var(--max-content-width);
     

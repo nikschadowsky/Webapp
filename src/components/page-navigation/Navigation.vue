@@ -94,7 +94,7 @@ export default {
 
 
 
-<style>
+<style scoped>
 .header {
 
     z-index: 12;

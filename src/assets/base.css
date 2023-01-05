@@ -7,28 +7,30 @@
     --default-hover: white;
     --default-text: white;
     --comment-color: gray;
-    font-size: 18pt;
     --max-site-width: 1600px;
     --header-height: 2.25rem;
     --max-indentation: 200px;
     --max-content-width: calc(var(--max-site-width) - 2* var(--max-indentation));
-
+    
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-
+    
     --color-gradient: radial-gradient(circle, var(--secondary-color) 10%, var(--background-color) 100%);
-
+    
     text-decoration: none;
-
+    
     --swiper-theme-color: var(--accent-color);
     --swiper-theme-color-hover: white;
-
+    
     --max-galery-width: var(--max-content-width);
     --max-galery-height: 600px;
+
+
+    font-size: 18pt;
 }
 
 .debug {
@@ -89,4 +91,12 @@ span.cursive  {
     padding-left: 100px;
     padding-right: 100px;
     width: fit-content;
+}
+
+.small-text{
+    font-size: 15pt;
+}
+
+.comment-darker{
+    color: #303030;
 }

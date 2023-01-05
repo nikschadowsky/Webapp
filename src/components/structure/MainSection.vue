@@ -10,7 +10,7 @@
     
 </template>
 
-<style>
+<style scoped>
 
 section{
     color: var(--default-text);
