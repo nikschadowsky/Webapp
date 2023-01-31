@@ -5,10 +5,23 @@ import HeaderSection from "../structure/HeaderSection.vue"
 
 
 export default {
+    data(){
+        return{
+            isExpanded: false
+        }
+    },
 
     components: {
         MainSection,
         HeaderSection
+    },
+    methods: {
+        expandContactForm(){
+            this.isExpanded = true;
+        },
+        hideContactForm(){
+            this.isExpanded = false;
+        }
     }
 
 }
@@ -30,7 +43,7 @@ export default {
                 
             </div>
             <div class="outro-child">
-                <p class="colored">Kontakt</p>
+                <p class="colored" @click="expandContacts">Kontakt</p>
                 nikschadowsky@nikschadowsky.de
             </div>
         </div>
