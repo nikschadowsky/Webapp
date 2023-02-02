@@ -2,8 +2,8 @@
 
 
 <script>
-import Navigation from "./components/page-navigation/Navigation.vue";
-import Wrapper from "./components/Wrapper.vue"
+import Navigation from "./components/infrastructure/Navigation.vue";
+import Wrapper from "./components/infrastructure/Wrapper.vue"
 
 var darkModeOn;
 export default {
