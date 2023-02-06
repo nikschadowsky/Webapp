@@ -2,13 +2,16 @@
 import { isMobile } from "../../util.js";
 
 export default {
-    created() {
-        console.log(isMobile())
-    },
+   
+
     methods: {
         isMobileDevice() {
-            console.log(isMobile);
-            return isMobile;
+            
+            return (window.innerWidth <= 800);
+        },
+        scrollToTop(){
+            console.log("top");
+            window.scrollTo({top: 0, behavior: "smooth"});
         }
     }
 }
@@ -17,14 +20,63 @@ export default {
 
 <template>
     <div id="navbar">
-        <p class="colored" v-show="isMobileDevice">test </p>
+
+        <a class="link" @click="scrollToTop">nikschadowsky </a>
+
+        <p class="link">contact</p>
+
+        <a href="https://www.github.com/nikschadowsky" target="_blank" rel="noopener noreferrer"  class="link">github</a>
+
     </div>
 </template>
 
-<style>
+<style scoped>
 #navbar {
+    position: fixed;
+    display: flex;
     width: 100%;
-    background-color: #666666;
-    height: 50px;
+    height: 55px;
+
+    align-items: center;
+    gap: 35px;
+
+    border-bottom: var(--accent-color) solid 2px;
+    box-shadow: 0 3px 10px var(--accent-color-shadow);
+    background-color: var(--background-color);
+
+    z-index: 4;
 }
+
+
+#navbar> :first-child {
+    margin-right: auto;
+    margin-left: 40px;
+}
+
+#navbar> :last-child {
+    margin-right: 40px;
+}
+
+.entry{
+    position: relative;
+}
+
+.entry:hover::after{
+    transform-origin: center;
+    transform: scaleX(1);
+}
+
+.entry::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: darksalmon;
+    transform: scaleX(0);
+
+    transition: transform 250ms;
+}
+
 </style>
