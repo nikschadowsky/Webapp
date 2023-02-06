@@ -2,24 +2,23 @@
     --blink-animation: blink .8s infinite step-end;
     --default-hover-transition: color .7s ease ; 
 }
-@keyframes typing-anim {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
-}
 
 @keyframes blink {
 
     from,
     to {
-        color: var(--default-hover)
+        opacity: 1;
     }
 
     50% {
-        color: transparent
+        opacity: 0;
+    }
+}
+@keyframes visibility {
+    from {
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
     }
 }
