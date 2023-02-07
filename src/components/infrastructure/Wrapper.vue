@@ -2,6 +2,7 @@
 
 import Intro from "../sections/Intro.vue"
 import About from "../sections/About.vue"
+import Projects from "../sections/Projects.vue"
 
 export default {
 
@@ -19,7 +20,7 @@ export default {
 
 
     components: {
-        Intro, About
+        Intro, About, Projects
     },
      
 }
@@ -32,6 +33,7 @@ export default {
         
         <div v-show="pageActive">
             <About />
+            <Projects />
         </div>
     </div>
 
