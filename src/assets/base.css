@@ -6,21 +6,21 @@
     --comment-text-color-dark-bg: rgb(139, 139, 139);
     --accent-color: rgb(34, 211, 34);
     --accent-color-shadow: rgb(104, 131, 59);
-    
+
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-    
+
     --color-gradient: radial-gradient(circle, var(--secondary-color) 10%, var(--background-color) 100%);
-    
-    
-    
+
+
+
     --swiper-theme-color: var(--accent-color);
     --swiper-theme-color-hover: white;
-    
+
     --max-galery-width: var(--max-content-width);
     --max-galery-height: 600px;
 
@@ -44,8 +44,11 @@
 .link {
     position: relative;
     cursor: pointer;
+
+    white-space: nowrap;
 }
-.link::after{
+
+.link::after {
     content: '';
     position: absolute;
     left: 0;
@@ -57,20 +60,29 @@
     transform: scaleX(0);
     transition: transform 250ms;
 }
-.link:hover::after{
+
+.link:hover::after {
     transform-origin: center;
     transform: scaleX(1);
 }
 
 
 
-.section{
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-height: 100vh;
+.section {
 
-        padding-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+}
+
+.section:first-child {
+    padding-bottom: 1px;
+}
+
+.colored {
+    color: var(--accent-color);
 }

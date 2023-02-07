@@ -23,10 +23,11 @@ export default {
 
         <a class="link" @click="scrollToTop">nikschadowsky </a>
 
-        <p class="link">contact</p>
-
+        
         <a href="https://www.github.com/nikschadowsky" target="_blank" rel="noopener noreferrer"  class="link">github</a>
-
+        
+        <p class="link">kontakt</p>
+        
     </div>
 </template>
 
