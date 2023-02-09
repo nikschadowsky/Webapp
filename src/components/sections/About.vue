@@ -20,9 +20,9 @@ export default {
         <div id="text-block">
             <div id="text">
                 <p>
-                    Heyho! <br>
-                    <br>Ich bin Nik Schadowsky.
-                    Seit August 2022 Dualer Student für Angewandte Informatik bei <a class="link colored"
+                    Hi! <br>
+                    <br>Ich bin Nik Schadowsky. <br>
+                    Seit August 2022 bin ich Dualer Student für Angewandte Informatik bei <a class="link colored"
                         href="https://www.tk.de/" target="_blank" rel="noopener noreferrer">@Techniker Krankenkasse</a>.
                     <br><br>
 
@@ -56,6 +56,8 @@ export default {
 #img-holder {
     
     border: 1px var(--accent-color) solid;
+    box-shadow: 0 0 6px var(--accent-color-shadow);
+
     padding: 10px;
 
     margin: 0 50px ;
@@ -67,6 +69,7 @@ export default {
     display: block;
 
     border: 1px solid rgba(104, 131, 59, .5);
+    box-shadow: 0 0 2px var(--accent-color-shadow);
 
     margin: 0;
 }
