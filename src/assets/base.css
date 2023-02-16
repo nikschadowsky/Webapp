@@ -3,9 +3,12 @@
 :root {
     --background-color: #10101a;
     --text-color-dark-bg: rgb(245, 245, 245);
-    --comment-text-color-dark-bg: rgb(139, 139, 139);
-    --accent-color: rgb(34, 211, 34);
-    --accent-color-shadow: rgb(104, 131, 59);
+    --comment-text-color-dark-bg: rgb(97, 97, 97);
+    --accent-color: rgb(41, 190, 228);
+    --accent-color-shadow: rgb(26, 69, 99);
+
+    /* 34 211 34
+    104 131 59*/
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -85,4 +88,15 @@
 
 .colored {
     color: var(--accent-color);
+}
+
+.transparent {
+    opacity: 0;
+}
+.comment {
+    color: var(--comment-text-color-dark-bg);
+
+    font-style: italic;
+    
+
 }
