@@ -8,7 +8,7 @@ export default {
         return {
             currentSemester: 0,
             semesterArray: [],
-            semesterTimespanArray:  []
+            semesterTimespanArray: []
 
         }
     },
@@ -43,23 +43,25 @@ export default {
     <div id="roadmap" class="section">
         <div id="timeline-holder">
 
-            <div id="initial-dot" class="dot"></div>
+            <div id="timeline-content">
+                <div id="timeline"></div>
+                <div id="initial-dot" class="dot"></div>
 
-            <div id="timeline-short"></div>
 
-            <div class="dot-section" v-for="(sem, i) in semesterArray" >
+                <div class="dot-section" v-for="(sem, i) in semesterArray">
 
-                <div class="dot "></div>
-                <div class="dashed-line " :class="{comment: currentSemester < i+1}"></div>
-                <div class="semester-text " :class="{comment: currentSemester < i+1}">{{currentSemester < i+1? this.semesterTimespanArray[i] : "timespans[i]"}}</div>
+                    <div class="dot "></div>
+                    <div class="dashed-line " :class="{ comment: currentSemester < i + 1 }"></div>
+                    <div class="semester-text " :class="{ comment: currentSemester < i + 1 }">{{ currentSemester<i+ 1 ?
+                    this.semesterTimespanArray[i] : sem}}</div>
+                    </div>
+                </div>
+
+
+                <div id="arrow"></div>
+
             </div>
-
-            <div id="timeline-short"></div>
-
-            <div id="arrow"></div>
-
         </div>
-    </div>
 </template>
 
 <style scoped>
@@ -70,15 +72,20 @@ export default {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-right: 200px;
+    /*margin-right: 200px;*/
 }
 
 #timeline {
+    position: absolute;
     width: 5px;
-    height: 70px;
+    height: 100%;
     background-color: var(--comment-text-color-dark-bg);
 
+    left: 6px;
+}
 
+#timeline-content {
+    position: relative;
 }
 
 #timeline-long {
@@ -115,7 +122,8 @@ export default {
     background: var(--comment-text-color-dark-bg);
     border: 2px solid var(--comment-text-color-dark-bg);
 
-    margin-left: 3px;
+    margin-left: 2px;
+    margin-bottom: 30px;
 }
 
 #arrow {
