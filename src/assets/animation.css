@@ -3,6 +3,15 @@
     --default-hover-transition: color .7s ease ; 
 }
 
+
+.caret-blink::after {
+    content: "_";
+    color: var(--accent-color);
+
+    animation: var(--blink-animation);
+}
+
+
 @keyframes blink {
 
     from,

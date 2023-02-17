@@ -128,13 +128,6 @@ export default {
     color: var(--comment-text-color-dark-bg);
 }
 
-.caret-blink::after {
-    content: "_";
-    color: var(--accent-color);
-
-    animation: blink .8s infinite step-end;
-}
-
 #go-text {
     position: relative;
     z-index: 3;
