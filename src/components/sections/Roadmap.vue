@@ -39,7 +39,6 @@ export default {
 </script>
 
 <template>
-
     <div id="roadmap" class="section">
         <div id="timeline-holder">
 
@@ -50,18 +49,21 @@ export default {
 
                 <div class="dot-section" v-for="(sem, i) in semesterArray">
 
-                    <div class="dot "></div>
+                    <div class="dot " :class="{ 'dot-disabled': currentSemester < i + 1 }"></div>
                     <div class="dashed-line " :class="{ comment: currentSemester < i + 1 }"></div>
-                    <div class="semester-text " :class="{ comment: currentSemester < i + 1 }">{{ currentSemester<i+ 1 ?
-                    this.semesterTimespanArray[i] : sem}}</div>
+                    <div class="semester-text " :class="{ comment: currentSemester < i + 1 }">
+                        <p 
+                            :class="{'underline': currentSemester === i + 1, 'active-semester': currentSemester === i + 1, comment: currentSemester < i + 1 }">
+                            {{ currentSemester < i + 1 ? this.semesterTimespanArray[i] : sem }}</p>
                     </div>
                 </div>
-
-
-                <div id="arrow"></div>
-
             </div>
+
+
+            <div id="arrow"></div>
+
         </div>
+    </div>
 </template>
 
 <style scoped>
@@ -79,29 +81,13 @@ export default {
     position: absolute;
     width: 5px;
     height: 100%;
-    background-color: var(--comment-text-color-dark-bg);
+    background-color: var(--timeline-color);
 
     left: 6px;
 }
 
 #timeline-content {
     position: relative;
-}
-
-#timeline-long {
-    width: 5px;
-    height: 90px;
-    background-color: var(--comment-text-color-dark-bg);
-
-
-}
-
-#timeline-short {
-    width: 5px;
-    height: 40px;
-    background-color: var(--comment-text-color-dark-bg);
-
-
 }
 
 
@@ -118,12 +104,19 @@ export default {
 
 }
 
-#initial-dot {
-    background: var(--comment-text-color-dark-bg);
-    border: 2px solid var(--comment-text-color-dark-bg);
+.dot-disabled {
+    border-color: var(--comment-text-color-dark-bg);
+}
 
-    margin-left: 2px;
+#initial-dot {
+    position: relative;
+    background: var(--comment-text-color-dark-bg);
+    border: 4px solid var(--comment-text-color-dark-bg);
+
+    margin-left: 0px;
     margin-bottom: 30px;
+
+    top: -2px;
 }
 
 #arrow {
@@ -153,10 +146,32 @@ export default {
     margin-bottom: 40px;
 }
 
-.semester-text {}
+.semester-text {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    text-align: center;
+}
+
+.text {
+    width: min-content;
+
+}
 
 .dashed-line {
     width: 100px;
     border-top: 1px dashed var(--accent-color);
+}
+
+.dashed-line.comment {
+    border-color: var(--comment-text-color-dark-bg);
+}
+
+.active-semester {
+
+    font-weight: 600;
+
 }
 </style> 
