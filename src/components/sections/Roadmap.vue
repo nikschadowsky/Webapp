@@ -32,6 +32,17 @@ export default {
     },
     components: {
         Timeline
+    },
+    methods: {
+        isCurrentSemester(index) {
+            return (index + 1) === this.currentSemester
+        },
+        isSemesterInPast(index) {
+            return (index + 1) < this.currentSemester
+        },
+        isSemesterInFuture(index) {
+            return !this.isSemesterInPast(index) && !this.isCurrentSemester(index)
+        }
     }
 
 }
@@ -49,12 +60,19 @@ export default {
 
                 <div class="dot-section" v-for="(sem, i) in semesterArray">
 
-                    <div class="dot " :class="{ 'dot-disabled': currentSemester < i + 1 }"></div>
-                    <div class="dashed-line " :class="{ comment: currentSemester < i + 1 }"></div>
-                    <div class="semester-text " :class="{ comment: currentSemester < i + 1 }">
-                        <p 
-                            :class="{'underline': currentSemester === i + 1, 'active-semester': currentSemester === i + 1, comment: currentSemester < i + 1 }">
-                            {{ currentSemester < i + 1 ? this.semesterTimespanArray[i] : sem }}</p>
+                    <div class="dot " :class="{ 'dot-disabled': this.isSemesterInFuture(i) }"></div>
+                    <div class="dashed-line " :class="{ 'comment': this.isSemesterInFuture(i) }"></div>
+                    <div class="semester-text " :class="{ 'comment': this.isSemesterInFuture(i) }">
+                        <p
+                            :class="{ 'active-semester': this.isCurrentSemester(i), comment: this.isSemesterInFuture(i) }">
+                            {{ this.isSemesterInFuture(i) ? this.semesterTimespanArray[i] : sem }}
+                        </p>
+
+                        <li v-show="this.isSemesterInPast(i)" class="semester-status checkmark"></li>
+
+                        <div style="height: 100%; ">
+                            <li v-show="this.isCurrentSemester(i)" class="semester-status in-progress"> </li>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,8 +128,8 @@ export default {
 
 #initial-dot {
     position: relative;
-    background: var(--comment-text-color-dark-bg);
-    border: 4px solid var(--comment-text-color-dark-bg);
+    background: var(--accent-color);
+    border: 4px solid var(--accent-color);
 
     margin-left: 0px;
     margin-bottom: 30px;
@@ -141,18 +159,20 @@ export default {
     align-items: center;
 
 
-    width: 300px;
+    width: 350px;
 
     margin-bottom: 40px;
 }
 
 .semester-text {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 150px;
+    width: 200px;
     text-align: center;
+
+    position: relative;
 }
 
 .text {
