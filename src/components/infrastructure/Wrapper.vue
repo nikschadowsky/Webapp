@@ -4,6 +4,7 @@ import Intro from "../sections/Intro.vue"
 import About from "../sections/About.vue"
 import Projects from "../sections/Projects.vue"
 import Roadmap from "../sections/Roadmap.vue"
+import Outro from "../sections/Outro.vue"
 
 export default {
 
@@ -21,7 +22,7 @@ export default {
 
 
     components: {
-        Intro, About, Projects, Roadmap
+        Intro, About, Projects, Roadmap, Outro
     },
      
 }
@@ -36,6 +37,7 @@ export default {
             <About />
             <Projects />
             <Roadmap />
+            <Outro />
         </div>
     </div>
 
