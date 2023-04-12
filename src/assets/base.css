@@ -21,8 +21,6 @@
 
     --color-gradient: radial-gradient(circle, var(--secondary-color) 10%, var(--background-color) 100%);
 
-
-
     --swiper-theme-color: var(--accent-color);
     --swiper-theme-color-hover: white;
 
@@ -63,6 +61,8 @@
     background-color: var(--accent-color);
     transform: scaleX(0);
     transition: transform 250ms;
+
+    box-shadow: 0 3px 10px var(--accent-color-shadow);
 }
 
 .link:hover::after {
@@ -99,6 +99,10 @@
 
 }
 
+div.comment >p{
+    color: inherit;
+}
+
 .section:first-child {
     padding-bottom: 1px;
 }
@@ -115,7 +119,7 @@
     color: var(--comment-text-color-dark-bg);
 
 }
-.comment.italicized{
+.italicized{
     font-style: italic;
 }
 

@@ -17,4 +17,8 @@ import './assets/base.css'
 import './assets/animation.css'
 import './assets/scrollbar.css'
 
+addEventListener("scroll", () => {
+  //console.log(scrollY);
+})
+
 app.mount("#app")

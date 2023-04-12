@@ -1,8 +1,13 @@
 <script>
 
 import { getRandomInt } from "../../util.js"
+import About from "../sections/About.vue"
 
 export default {
+
+    components:{
+        About
+    },
 
     updated() {
         console.log("Intro updated");
@@ -32,7 +37,7 @@ export default {
     }, methods: {
         typeCharacterOfName() {
             if (this.currentTextName === this.finalTextName) {
-                
+
 
                 // classlist
                 document.getElementById("name").classList.remove("caret-blink");
@@ -49,7 +54,7 @@ export default {
         },
         typeCharacterOfTitle() {
             if (this.currentTextTitle === this.finalTextTitle) {
-                setTimeout(this.afterTyping(),this.buttonDelay);
+                setTimeout(this.afterTyping(), this.buttonDelay);
                 this.isTyping = false;
                 this.fullyTyped = true;
 
@@ -99,23 +104,31 @@ export default {
 </script>
 
 <template>
-    <div class="section">
+    <div id="sup-flex">
+        <div class="section">
 
-        <p>
-            <span id="name" class="caret-blink">{{ currentTextName }}</span> <br>
-            <span id="title" >{{ currentTextTitle }} </span>
-        </p>
+            <p>
+                <span id="name" class="caret-blink">{{ currentTextName }}</span> <br>
+                <span id="title">{{ currentTextTitle }} </span>
+            </p>
 
-        <button id="go-button" @click="activateRestOfPage">
+            <button id="go-button" @click="activateRestOfPage">
 
-            <p id="go-text">Meet Me!</p>
+                <p id="go-text">Meet Me!</p>
 
-        </button>
+            </button>
 
+        </div>
+        <A bout/>
     </div>
 </template>
 
 <style scoped>
+#sup-flex {
+    display: flex;
+    justify-content: center;
+}
+
 #name {
     font-size: 40pt;
     font-weight: 600;

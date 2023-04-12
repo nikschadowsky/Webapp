@@ -2,7 +2,8 @@
 
 <template>
     <div id="projects" class="section">
-        Projects
+        Projects <br>
+        <p class="comment">&lt;coming soon&gt;</p>
     </div>
 
 

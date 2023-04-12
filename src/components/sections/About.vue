@@ -31,7 +31,7 @@ export default {
                     Mehr dazu in meinen <span class="colored link" @click="scrollToProjects"> Projekten</span>.
                 </p>
                 <div id="img-holder">
-                    <img id="picture" src="../../image_about.png" alt="image of Nik Schadowsky">
+                    <img id="picture" src="../../assets/media/image_about.png" alt="image of Nik Schadowsky">
                 </div>
             </div>
         </div>
