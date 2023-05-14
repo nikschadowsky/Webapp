@@ -1,4 +1,5 @@
 <script>
+import RoundedSquare from "../elements/RoundedSquare.vue"
 
 export default {
 
@@ -6,6 +7,8 @@ export default {
         scrollToProjects() {
             document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
         }
+    }, components:{
+        RoundedSquare
     }
 
 
@@ -16,23 +19,31 @@ export default {
 
 <template>
     <div id="about" class="section">
-
+        
         <div id="text-block">
-            <div id="text">
-                <p>
-                    Hi! <br>
-                    <br>Ich bin Nik Schadowsky. <br>
-                    Seit August 2022 bin ich Dualer Student für Angewandte Informatik bei <a class="link colored"
-                        href="https://www.tk.de/" target="_blank" rel="noopener noreferrer">@Techniker Krankenkasse</a>.
-                    <br><br>
+            <RoundedSquare objectID="svgImg" imageURL="src/assets/media/profil_sq.webp"></RoundedSquare>
+            <div >
+                <p id="text">
+                    <h1 class="about-header about-header-1 colored">Hey!</h1>
+                    Ich bin Nik Schadowsky. Seit August 2022 bin ich als Dualer Student für Angewandte Informatik bei
+                    <a class="link colored"
+                        href="https://www.tk.de/" target="_blank" rel="noopener noreferrer">@Techniker</a>
+                    und 
+                    <a class="link colored" href="https://www.nordakademie.de/" target="_blank" rel="noopener noreferrer">@Nordakademie</a>
+                    tätig.
 
-                    In meiner Freizeit arbeite ich viel mit Java, aber auch mit HTML, JavaScript, CSS und gelegentlich
-                    Python.
-                    Mehr dazu in meinen <span class="colored link" @click="scrollToProjects"> Projekten</span>.
+                    <h3 class="about-header about-header-2 colored">Mein Weg bis hier</h3>
+
+                    Seit fast 6 Jahren übe ich mich in der Software-Entwicklung und habe auf diesem Wege schon einiges lernen können. Neben der Programmiersprache Java konnte ich Grundkenntnisse in Python, HTML, JavaScript, CSS und VueJS mitnehmen.
+                    <br><br>
+                    Mehr dazu findest du in
+                        <span class="colored link" @click="scrollToProjects">Meine Projekte</span>
+
+                    <h3 class="about-header about-header-2 colored">Kunst. Musik. Wissen</h3>
+                    
+                    Ich lasse mich gern von Kreativität und bizarren Ideen zu Problemlösungen leiten und versuche stets eine klare und optimale Lösung für ein Problem finden - auch wenn es manchmal bedeutet, oft zu scheitern.
                 </p>
-                <div id="img-holder">
-                    <img id="picture" src="../../assets/media/image_about.png" alt="image of Nik Schadowsky">
-                </div>
+                
             </div>
         </div>
     </div>
@@ -41,16 +52,15 @@ export default {
 #text-block {
     display: flex;
     flex-direction: row;
-
-
+    align-items: center;
     max-width: 1000px;
-    max-height: 500px
+    max-height: 5 00px
 }
 
 #text {
     height: 100%;
-    display: flex;
-    align-items: center;
+    font-size: 16pt;
+    text-align: start;
 }
 
 #img-holder {
@@ -73,4 +83,24 @@ export default {
 
     margin: 0;
 }
+
+#svgImg{
+    min-width: 400px;
+    height: 400px;
+
+    margin-right: 100px;
+    border: solid white 2px;
+    border-radius: 20%;
+}
+
+.about-header{
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+.about-header-1{
+    padding-top: 0;
+}
+.about-header-2{}
+.about-header-3{}
+
 </style>
