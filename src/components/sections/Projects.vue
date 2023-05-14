@@ -128,6 +128,7 @@ export default {
         }
 
     }
+
 }
 
 </script>
@@ -138,8 +139,10 @@ export default {
         <div class="repo-container">
 
             <div v-for="repository in this.repositories.slice(0, this.currentlyVisible)" class="repo">
-                <img class="repo-desc-image" alt="" :src="repository.imageData!='' ? ('data:image/png;base64, ' + repository.imageData) : 'src/assets/media/DESCRIPTION_IMAGE.png'">
-
+                <div class="repo-image-wrapper">
+                    <img class="repo-desc-image" alt=""
+                        :src="repository.imageData != '' ? ('data:image/png;base64, ' + repository.imageData) : 'src/assets/media/DESCRIPTION_IMAGE.png'">
+                </div>
                 <div class="repo-spacer top"></div>
 
 
@@ -163,7 +166,7 @@ export default {
         </div>
         <div id="repo-button-holder">
 
-            <button v-show="!this.isLoading" id="load-more-button" class="visible" @click="this.showMore()"  >
+            <button v-show="!this.isLoading" id="load-more-button" class="visible" @click="this.showMore()">
                 <p id="load-more-text">Mehr laden</p>
 
             </button>
@@ -219,27 +222,40 @@ export default {
     transition: scale 0.2s ease-in-out;
 
 }
+.repo-image-wrapper{
+    width: 100%;
+
+    min-height: 50%;
+    max-height: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+}
 
 .repo-desc-image {
-    width: 100%;
-    height: 50%;
-    transform-origin: center;
+    display: block;
+    height: 100%;
+    width: auto;
 
 
 }
 
 
-.repo-spacer{
+.repo-spacer {
     width: 80%;
     min-height: 2px;
     background-color: whitesmoke;
 
-}.repo-spacer.top {
-   
-   margin: 15px auto 15px auto;
+}
+
+.repo-spacer.top {
+
+    margin: 15px auto 15px auto;
 
 }
-.repo-spacer.bottom{
+
+.repo-spacer.bottom {
 
     margin: 0 auto 8px auto;
 }
@@ -365,7 +381,7 @@ export default {
     position: relative;
     opacity: 1;
     transition: color .5s ease;
-    
+
     transition: opacity 1s ease 1s;
     cursor: pointer;
 }
@@ -395,5 +411,4 @@ export default {
 
 #load-more-button.visible:hover:after {
     width: 100%;
-}
-</style>
+}</style>
