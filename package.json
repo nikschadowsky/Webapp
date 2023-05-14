@@ -7,6 +7,8 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@octokit/request": "^6.2.3",
+    "axios": "^1.4.0",
     "gsap": "^3.11.4",
     "scrollmagic": "^2.0.8",
     "swiper": "^8.4.5",
