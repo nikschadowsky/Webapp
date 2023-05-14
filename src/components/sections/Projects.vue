@@ -117,12 +117,6 @@ export default {
                 newList.push("finished");
             }
 
-            newList.push("abcdef")
-            newList.push("abcdef")
-            newList.push("abcdef")
-            newList.push("abcdef")
-            newList.push("abcdef")
-
 
             return newList.toReversed();
         }
