@@ -8,6 +8,13 @@
     --accent-color-shadow: rgb(26, 69, 99);
 
     --timeline-color: rgb(147, 147, 147);
+    --repository-color : rgb(120,120,120);
+
+    --gray-1: #000;
+
+    --font-default: 18pt;
+    --font-larger:20pt;
+    --font-smaller: 12pt;
 
     /* 34 211 34
     104 131 59*/
