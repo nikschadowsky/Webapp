@@ -23,7 +23,7 @@ export default {
             currentTextName: "",
             finalTextName: "Nik Schadowsky",
             currentTextTitle: "",
-            finalTextTitle: "Dualer Student ",
+            finalTextTitle: "Dualer Student",
             isTyping: false,
             fullyTyped: false,
             typingSpeed: 90,
@@ -119,7 +119,7 @@ export default {
             </button>
 
         </div>
-        <A bout/>
+       
     </div>
 </template>
 
