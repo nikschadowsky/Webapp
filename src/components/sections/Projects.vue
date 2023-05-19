@@ -47,7 +47,6 @@ export default {
                 username: this.username,
                 headers: {
                     'X-GitHub-Api-Version': '2022-11-28',
-                    authorization: "token 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"
                 },
                 sort: "pushed",
                 direction: "desc",
@@ -76,7 +75,6 @@ export default {
                         headers: {
                             'X-GitHub-Api-Version': '2022-11-28',
 
-                            authorization: "token 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"
                         },
                         username: this.username,
                         repository: repo.name,
