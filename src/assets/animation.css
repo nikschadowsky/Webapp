@@ -34,6 +34,18 @@
     }
 }
 
+@keyframes rock {
+
+    from,
+    to {
+        rotate: 3deg;
+    }
+
+    50% {
+        rotate: -3deg;
+    }
+}
+
 /*LOADING ANIMATION*/
 
 .loading-icon {
@@ -79,4 +91,29 @@
         top: 24px;
         height: 32px;
     }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 360deg;
+    }
+
+    to {
+        rotate: 0deg;
+    }
+}
+
+@keyframes fadeOutToTop {
+
+    from {}
+
+    to {
+        scale: 0;
+        translate: 0 -30vh;
+    }
+
 }

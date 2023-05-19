@@ -1,6 +1,11 @@
 <script>
 
 import Timeline from "../elements/timeline.vue"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from "gsap"
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default {
 
@@ -14,6 +19,28 @@ export default {
     },
 
     mounted() {
+        console.log("mounted");
+
+        gsap.from("#roadmap-title", {
+            scrollTrigger: {
+                trigger: "#roadmap",
+                start: "top center",
+                end: "bottom bottom",
+                scrub: 1,
+                markers: true
+            },
+            x: "-200%"
+        })
+        gsap.from("#timeline-holder", {
+            scrollTrigger: {
+                trigger: "#roadmap",
+                start: "top center",
+                end: "bottom bottom",
+                scrub: 1,
+                markers: true
+            },
+            x: "200%"
+        })
 
         fetch("roadmap-state")
             .then(response => {
@@ -42,6 +69,17 @@ export default {
         },
         isSemesterInFuture(index) {
             return !this.isSemesterInPast(index) && !this.isCurrentSemester(index)
+        }, visibilityChanged(visible, entry) {
+
+            if (visible) {
+
+            } else {
+                //gsap.to("#roadmap-title", {x:"-150%", duration: 2})
+                //gsap.to("#timeline-holder", {x:"150%", duration: 1.5})
+
+                console.log("onleave");
+            }
+
         }
     }
 
@@ -50,7 +88,14 @@ export default {
 </script>
 
 <template>
-    <div id="roadmap" class="section">
+    <div @visibilityChanged="initGSAP()" id="roadmap" class="section"
+        v-observe-visibility="{ callback: visibilityChanged, intersection: { threshhold: .0 } }">
+
+        <div id="roadmap-title">
+            <h1 class="roadmap colored">Studium-Roadmap</h1>
+            <p class="roadmap subtitle">des Informatik-Studiums</p>
+        </div>
+
         <div id="timeline-holder">
 
             <div id="timeline-content">
@@ -63,8 +108,7 @@ export default {
                     <div class="dot " :class="{ 'dot-disabled': this.isSemesterInFuture(i) }"></div>
                     <div class="dashed-line " :class="{ 'comment': this.isSemesterInFuture(i) }"></div>
                     <div class="semester-text " :class="{ 'comment': this.isSemesterInFuture(i) }">
-                        <p
-                            :class="{ 'active-semester': this.isCurrentSemester(i), comment: this.isSemesterInFuture(i) }">
+                        <p :class="{ 'active-semester': this.isCurrentSemester(i), comment: this.isSemesterInFuture(i) }">
                             {{ this.isSemesterInFuture(i) ? this.semesterTimespanArray[i] : sem }}
                         </p>
 
@@ -81,10 +125,23 @@ export default {
             <div id="arrow"></div>
 
         </div>
+
     </div>
 </template>
 
 <style scoped>
+#roadmap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 140px;
+
+
+}
+
+.roadmap.subtitle {
+    text-align: center;
+}
+
 #timeline-holder {
     position: relative;
 
@@ -93,6 +150,9 @@ export default {
     align-items: flex-start;
     flex-direction: column;
     /*margin-right: 200px;*/
+
+    background-color: var(--background-color);
+
 }
 
 #timeline {
