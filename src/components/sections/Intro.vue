@@ -1,16 +1,14 @@
 <script>
 
 import { getRandomInt } from "../../util.js"
-import About from "../sections/About.vue"
+import RoundedTriangle from "../elements/RoundedTriangle.vue";
+import RoundedSquare from "../elements/RoundedSquare.vue";
+
 
 export default {
 
-    components:{
-        About
-    },
-
-    updated() {
-        console.log("Intro updated");
+    components: {
+        RoundedSquare, RoundedTriangle
     },
 
     mounted() {
@@ -93,6 +91,13 @@ export default {
 
                 document.getElementById("about").scrollIntoView({ behavior: "smooth" })
             }, 200)
+        },
+
+        startPolygonAnimation() {
+
+            let squares = document.getElementsByClassName("intro animated-square");
+
+
         }
 
 
@@ -105,28 +110,40 @@ export default {
 
 <template>
     <div id="sup-flex">
-        <div class="section">
+        <div id="intro" class="section">
 
             <p>
                 <span id="name" class="caret-blink">{{ currentTextName }}</span> <br>
                 <span id="title">{{ currentTextTitle }} </span>
             </p>
 
-            <button id="go-button" @click="activateRestOfPage">
+            <button id="go-button" @click="activateRestOfPage" @mouseover="startPolygonAnimation">
 
                 <p id="go-text">Meet Me!</p>
 
             </button>
 
+            <div id="polygon-container" class="intro">
+                <RoundedSquare class="intro animated-square" v-for="i in 10" />
+                <RoundedTriangle />
+            </div>
+
         </div>
-       
+
     </div>
 </template>
 
 <style scoped>
+#intro.section {
+    position: relative;
+    overflow-y: clip;
+}
+
 #sup-flex {
     display: flex;
     justify-content: center;
+
+
 }
 
 #name {
@@ -158,6 +175,8 @@ export default {
     color: var(--text-color-dark-bg);
 
     opacity: 0;
+
+    z-index: 2;
 
     cursor: pointer;
 }
@@ -195,5 +214,24 @@ export default {
 
 #go-button.visible:hover:after {
     width: 100%;
+}
+
+.polygon-container {
+    position: relative;
+
+}
+
+
+.intro.animated-square {
+    fill: var(--polygon-gray-4);
+
+    position: absolute;
+
+    bottom: -100px;
+    top: auto;
+
+    animation: rotate 10s infinite linear, fadeOutToTop 2s infinite linear;
+    transform-origin: center;
+    scale: .5;
 }
 </style>
