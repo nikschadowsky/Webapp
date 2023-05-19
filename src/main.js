@@ -16,6 +16,8 @@ app.directive('observe-visibility', {
 import './assets/base.css'
 import './assets/animation.css'
 import './assets/scrollbar.css'
+import './assets/about.css'
+import './assets/visuals.css'
 
 addEventListener("scroll", () => {
   //console.log(scrollY);
