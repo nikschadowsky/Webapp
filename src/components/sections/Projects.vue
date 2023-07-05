@@ -15,7 +15,7 @@ export default {
             maxReached: false,
             username: "nikschadowsky",
             currentPage: 0,
-            // while fetching
+            // while fetching 
             isLoading: false,
             tags: []
         }
@@ -46,7 +46,7 @@ export default {
             request("GET /users/{username}/repos", {
                 username: this.username,
                 headers: {
-                    'X-GitHub-Api-Version': '2022-11-28',
+                    'X-GitHub-Api-Version': '2022-11-28'
                 },
                 sort: "pushed",
                 direction: "desc",
@@ -74,7 +74,7 @@ export default {
                     request("GET /repos/{username}/{repository}/contents/{path}", {
                         headers: {
                             'X-GitHub-Api-Version': '2022-11-28',
-
+                            authorization: 'token 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'
                         },
                         username: this.username,
                         repository: repo.name,
@@ -87,9 +87,10 @@ export default {
 
 
             }).catch((err) => {
-                ///this.disableLoadMore()
+                this.disableLoadMore();
             }).finally(() => {
                 this.isLoading = false;
+                this.$scrolltrigger.refresh()
             })
 
 
@@ -116,7 +117,7 @@ export default {
             }
 
 
-            return newList.toReversed();
+            return newList.reverse();
         }
 
     }
@@ -130,7 +131,7 @@ export default {
         <h1 class="colored">Meine Projekte</h1>
         <div class="repo-container">
 
-            <div v-for="repository in this.repositories.slice(0, this.currentlyVisible)" class="repo">
+            <div v-for="(repository, index ) in this.repositories.slice(0, this.currentlyVisible)" class="repo" :id="'repo-' + index">
                 <div class="repo-image-wrapper">
                     <img class="repo-desc-image" alt=""
                         :src="repository.imageData != '' ? ('data:image/png;base64, ' + repository.imageData) : 'src/assets/media/DESCRIPTION_IMAGE.png'">
@@ -176,6 +177,9 @@ export default {
 <style scoped>
 #projects {
     margin-top: 100px;
+    overflow-y: clip;
+
+    margin-bottom: 20%;
 }
 
 .repo-container {
@@ -184,6 +188,7 @@ export default {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+
 
     flex-wrap: wrap;
     gap: 60px;
@@ -214,7 +219,8 @@ export default {
     transition: scale 0.2s ease-in-out;
 
 }
-.repo-image-wrapper{
+
+.repo-image-wrapper {
     width: 100%;
 
     min-height: 50%;
@@ -403,4 +409,5 @@ export default {
 
 #load-more-button.visible:hover:after {
     width: 100%;
-}</style>
+}
+</style>

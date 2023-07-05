@@ -88,8 +88,7 @@ export default {
             this.$emit('pageActivationEvent');
 
             setTimeout(() => {
-
-                document.getElementById("about").scrollIntoView({ behavior: "smooth" })
+                document.getElementById("about-scroll-anchor").scrollIntoView({ behavior: "smooth" })
             }, 200)
         },
 
@@ -111,32 +110,33 @@ export default {
 <template>
     <div id="sup-flex">
         <div id="intro" class="section">
+            <div id="name-holder">
+                <p>
+                    <span id="name" class="caret-blink">{{ currentTextName }}</span> <br>
+                    <span id="title">{{ currentTextTitle }} </span>
+                </p>
 
-            <p>
-                <span id="name" class="caret-blink">{{ currentTextName }}</span> <br>
-                <span id="title">{{ currentTextTitle }} </span>
-            </p>
+                <button id="go-button" @click="activateRestOfPage" @mouseover="startPolygonAnimation">
 
-            <button id="go-button" @click="activateRestOfPage" @mouseover="startPolygonAnimation">
+                    <p id="go-text">Start</p>
 
-                <p id="go-text">Meet Me!</p>
+                </button>
 
-            </button>
 
-            <div id="polygon-container" class="intro">
-                <RoundedSquare class="intro animated-square" v-for="i in 10" />
-                <RoundedTriangle />
+
             </div>
-
         </div>
 
     </div>
 </template>
 
 <style scoped>
-#intro.section {
-    position: relative;
-    overflow-y: clip;
+#name-holder {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #sup-flex {
@@ -167,7 +167,7 @@ export default {
 #go-button {
     font-size: 16pt;
     padding: 5px 18px;
-    margin-top: 18px;
+    margin-top: 30px;
 
     background-color: var(--background-color);
     border: 2px var(--accent-color) solid;
@@ -216,22 +216,9 @@ export default {
     width: 100%;
 }
 
-.polygon-container {
-    position: relative;
-
-}
-
-
-.intro.animated-square {
-    fill: var(--polygon-gray-4);
-
-    position: absolute;
-
-    bottom: -100px;
-    top: auto;
-
-    animation: rotate 10s infinite linear, fadeOutToTop 2s infinite linear;
-    transform-origin: center;
-    scale: .5;
+@media only screen and (max-width: 600px) {
+    #name {
+        font-size: 32pt;
+    }
 }
 </style>

@@ -8,18 +8,27 @@ import LetterIcon from "../elements/LetterIcon.vue"
 export default {
     components: {
         GitHubIcon, InstagramIcon, DiscordIcon, SpotifyIcon, LetterIcon
+    },
+    mounted(){
+        this.$gsap.to("body", {scrollTrigger:{
+            trigger: "#outro",
+            start: "center top",
+            end: "bottom bottom",
+            scrub: true,
+            markers: true
+        },background: "#111111", duration: 5})
     }
 }
 
 </script>
 
 <template>
-    <div class="section">
+    <div class="section" id="outro">
 
         <div id="quote">
             <p>
                 <span class="italicized">„Gott würfelt nicht”</span>
-                <span style="white-space: nowrap;"> - <span class="italicized">Albert Einstein, 1926 </span></span>
+                <span style="white-space: nowrap;"> - <span class="italicized">Albert Einstein </span></span>
             </p>
         </div>
 
@@ -42,7 +51,7 @@ export default {
                 <div id="spacer-line"></div>
             </div>
 
-            <div id="contact-panel" class="d ebug">
+            <div id="contact-panel">
                 <div id="mail-contact">
                     <p>Schreib mir doch gerne eine E-Mail:</p>
                     <div id="mail-container">
@@ -60,7 +69,8 @@ export default {
                         <a href="https://www.instagram.com/nikschadowsky/" target="_blank" rel="noopener noreferrer">
                             <InstagramIcon class=" icon" />
                         </a>
-                        <a href="https://open.spotify.com/playlist/62BbMAkhDxHFhwnBnqH2kJ?si=758383e9a106456c">
+                        <a href="https://open.spotify.com/playlist/62BbMAkhDxHFhwnBnqH2kJ?si=758383e9a106456c"
+                            target="_blank" rel="noopener noreferrer">
                             <SpotifyIcon id="spotify" class="icon" />
                         </a>
                     </div>
@@ -93,13 +103,6 @@ export default {
     justify-content: center;
 }
 
-#spacer-line {
-    width: 0px;
-    height: 100%;
-
-    border-image: radial-gradient(circle, var(--accent-color) 60%, rgba(0, 0, 0, 0) 90%) 1;
-    border-left: solid 2px;
-}
 
 .flexbox-table {
     display: flex;
@@ -112,6 +115,7 @@ export default {
     flex-wrap: wrap;
 
     justify-content: center;
+    gap: 20px;
 
 }
 
@@ -189,6 +193,7 @@ export default {
 
 #icon-library {
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 
@@ -219,6 +224,10 @@ export default {
     transform: scale(1.1);
 }
 
-
-#discord path {}
+@media only screen and (max-width: 600px) {
+    #mail-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
 </style>

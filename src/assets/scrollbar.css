@@ -8,8 +8,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    opacity: 0;
-
+    opacity: 1;
 }
 
 

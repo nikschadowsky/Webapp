@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
 :root {
+
     --background-color: #10101a;
     --text-color-dark-bg: rgb(245, 245, 245);
     --comment-text-color-dark-bg: rgb(97, 97, 97);
@@ -8,12 +9,12 @@
     --accent-color-shadow: rgb(26, 69, 99);
 
     --timeline-color: rgb(147, 147, 147);
-    --repository-color : rgb(120,120,120);
+    --repository-color: rgb(120, 120, 120);
 
     --gray-1: #000;
 
     --font-default: 18pt;
-    --font-larger:20pt;
+    --font-larger: 20pt;
     --font-smaller: 12pt;
 
     /* 34 211 34
@@ -35,8 +36,9 @@
     --max-galery-height: 600px;
 
 
-    font-size: 18pt;
+    font-size: 16pt;
 }
+
 
 .debug {
     outline: 1px solid red;
@@ -66,7 +68,7 @@
     width: 100%;
     height: 2px;
     background-color: var(--accent-color);
-    transform: scaleX(0);
+    transform: scaleX(0.0001);
     transition: transform 250ms;
 
     box-shadow: 0 3px 10px var(--accent-color-shadow);
@@ -84,7 +86,8 @@
     position: relative;
     white-space: nowrap;
 }
-.underline::after{
+
+.underline::after {
     content: ' ';
     position: absolute;
     left: 0;
@@ -96,6 +99,7 @@
 }
 
 .section {
+    position: relative;
 
     display: flex;
     justify-content: center;
@@ -103,10 +107,16 @@
     flex-direction: column;
     min-height: 100vh;
 
+    max-width: 100vw;
+    overflow-x: hidden;
+    width: 100%;
+
+    overflow-y: visible;
+
 
 }
 
-div.comment >p{
+div.comment>p {
     color: inherit;
 }
 
@@ -126,7 +136,8 @@ div.comment >p{
     color: var(--comment-text-color-dark-bg);
 
 }
-.italicized{
+
+.italicized {
     font-style: italic;
 }
 
@@ -142,15 +153,17 @@ div.comment >p{
 
     position: absolute;
 
-    padding:  0 0 0 6px;
+    padding: 0 0 0 6px;
     top: 0;
 }
+
 .in-progress {
     list-style-type: none;
     height: 100%;
 
     content: ' ';
 }
+
 .in-progress::before {
     content: ' ';
 
@@ -172,7 +185,40 @@ div.comment >p{
     border-right: 2px solid yellow;
     border-bottom: 2px solid yellow;
 
-    top:20%; /*hardcoded, nicht die schönste Lösung, aber eine funktionierende*/
+    top: 20%;
+    /*hardcoded, nicht die schönste Lösung, aber eine funktionierende*/
     /*transform: rotateZ(-45deg);*/
+
+}
+
+.geometry {
+    position: absolute;
+
+    z-index: -10;
+
+}
+
+.about.header,
+.about-detailed.header {
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+.noscroll{
+    height: 100%;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        font-size: 12pt;
+
+    }
+
+    .about.header,
+    .about-detailed.header {
+        padding-bottom: 10px;
+        padding-top: 30px;
+    }
 
 }

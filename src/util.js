@@ -3,6 +3,6 @@ export function isMobile() {
     return (window.innerWidth <= 800);
 }
 
-export function getRandomInt(max){
+export function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }

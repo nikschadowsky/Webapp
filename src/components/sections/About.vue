@@ -1,7 +1,6 @@
 <script>
 import RoundedSquare from "../elements/RoundedSquare.vue"
 
-
 export default {
 
     methods: {
@@ -10,6 +9,35 @@ export default {
         }
     }, components: {
         RoundedSquare
+    }, mounted() {
+
+        this.$gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top top",
+                    end: "+=100%",
+                    pin: true,
+                    scrub: true
+                }
+            }).from("#svgImg", {
+                y: "300%",
+                duration: 4,
+                ease: "ease"
+            }, 0).to("#svgImg", {
+                y: "-300%",
+                duration: 4,
+                ease: "ease"
+            }, 8).from(".about#text", {
+                rotateX: "-90deg",
+                ease: "ease",
+                duration: 2
+            }, 2).to(".about#text", {
+                rotateX: "90deg",
+                ease: "ease",
+                duration: 2
+            }, 8)
+
     }
 
 
@@ -20,11 +48,9 @@ export default {
 
 <template>
     <div id="about" class="section">
-
         <div id="text-block" class="about">
-            <RoundedSquare id="svgImg" imageURL="src/assets/media/profil_sq.webp"></RoundedSquare>
-            <div>
-                <p id="text" class="about">
+
+            <div id="text" class="about">
                 <h1 class="about header header-1 colored">Hey!</h1>
                 Ich bin Nik Schadowsky. Seit August 2022 bin ich als Dualer Student für Angewandte Informatik bei
                 <a class="link colored" href="https://www.tk.de/" target="_blank" rel="noopener noreferrer">@Techniker</a>
@@ -33,37 +59,69 @@ export default {
                     rel="noopener noreferrer">@Nordakademie</a>
                 tätig.
 
-                </p>
-
             </div>
+            <RoundedSquare id="svgImg" imageURL="src/assets/media/profil_sq.webp"></RoundedSquare>
+
+
         </div>
     </div>
 </template>
 <style scoped>
-#picture {
-    height: 100%;
-    width: 100%;
-    display: block;
-
-    border: 1px solid rgba(104, 131, 59, .5);
-    box-shadow: 0 0 2px var(--accent-color-shadow);
-
-    margin: 0;
+#about {
+    overflow-y: hidden;
+    position: relative;
 }
+
+.about.header-1 {
+    padding-top: 0;
+}
+
+.about#text-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    transform-origin: top;
+    position: relative;
+
+    flex-direction: row-reverse;
+
+    gap: 40px;
+}
+
+.about#text {
+    transform-origin: top;
+    max-width: 500px;
+}
+
 
 #svgImg {
     min-width: 300px;
     height: 300px;
 
-    margin-right: 100px;
     border: solid white 2px;
     border-radius: 20%;
 
 }
 
-#svgImg:hover{
+
+#svgImg:hover {
     animation: rock 5s ease-in-out infinite;
     animation-delay: -1.25s;
 
+}
+
+
+@media only screen and (max-width: 600px) {
+    .about#text {
+        padding: 0 30px 0 30px;
+    }
+
+    #svgImg {
+        min-width: 200px;
+        height: 200px;
+    }
 }
 </style>

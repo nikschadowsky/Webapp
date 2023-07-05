@@ -93,7 +93,8 @@
     }
 }
 
-@keyframes rotate {
+
+@keyframes wobble {
     from {
         rotate: 0deg;
     }
@@ -107,13 +108,8 @@
     }
 }
 
-@keyframes fadeOutToTop {
-
-    from {}
-
-    to {
-        scale: 0;
-        translate: 0 -30vh;
+@keyframes rotate {
+    100% {
+        rotate: 360deg;
     }
-
 }

@@ -38,7 +38,8 @@ export default {
 
 body {
     background: var(--background-color);
-    color: #000000;
+    color: #ffffff;
+    position: relative;
 }
 
 
