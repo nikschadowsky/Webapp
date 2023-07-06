@@ -8,15 +8,6 @@ import LetterIcon from "../elements/LetterIcon.vue"
 export default {
     components: {
         GitHubIcon, InstagramIcon, DiscordIcon, SpotifyIcon, LetterIcon
-    },
-    mounted(){
-        this.$gsap.to("body", {scrollTrigger:{
-            trigger: "#outro",
-            start: "center top",
-            end: "bottom bottom",
-            scrub: true,
-            markers: true
-        },background: "#111111", duration: 5})
     }
 }
 
@@ -228,6 +219,9 @@ export default {
     #mail-icon {
         width: 22px;
         height: 22px;
+    }
+    #quote {
+        margin-bottom: 50px;
     }
 }
 </style>

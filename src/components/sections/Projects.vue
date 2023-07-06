@@ -73,8 +73,7 @@ export default {
 
                     request("GET /repos/{username}/{repository}/contents/{path}", {
                         headers: {
-                            'X-GitHub-Api-Version': '2022-11-28',
-                            authorization: 'token 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'
+                            'X-GitHub-Api-Version': '2022-11-28'
                         },
                         username: this.username,
                         repository: repo.name,
@@ -134,7 +133,7 @@ export default {
             <div v-for="(repository, index ) in this.repositories.slice(0, this.currentlyVisible)" class="repo" :id="'repo-' + index">
                 <div class="repo-image-wrapper">
                     <img class="repo-desc-image" alt=""
-                        :src="repository.imageData != '' ? ('data:image/png;base64, ' + repository.imageData) : 'src/assets/media/DESCRIPTION_IMAGE.png'">
+                        :src="repository.imageData != '' ? ('data:image/png;base64, ' + repository.imageData) : 'assets/media/DESCRIPTION_IMAGE.png'">
                 </div>
                 <div class="repo-spacer top"></div>
 

@@ -90,6 +90,7 @@ export default {
     background-color: var(--background-color);
 
     z-index: 9999;
+
 }
 
 
@@ -172,6 +173,9 @@ export default {
     font-weight: 600;
     margin-bottom: 30px;
     margin-right: 30px;
+}
+.open-nav.link:last-child{
+    margin-bottom: 100px;
 }
 
 </style>

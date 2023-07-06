@@ -60,7 +60,7 @@ export default {
                 tätig.
 
             </div>
-            <RoundedSquare id="svgImg" imageURL="src/assets/media/profil_sq.webp"></RoundedSquare>
+            <RoundedSquare id="svgImg" imageURL="assets/media/profil_sq.webp"></RoundedSquare>
 
 
         </div>

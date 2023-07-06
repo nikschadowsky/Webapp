@@ -97,6 +97,7 @@ export default {
 .about-detailed#text {
     transform-origin: left;
     max-width: 500px;
+    z-index: 100;
 }
 
 #trig {
@@ -138,11 +139,15 @@ export default {
 @media only screen and (max-width: 600px) {
     .about-detailed#text {
         padding: 0 30px 0 30px;
+        
     }
 
     #pathelement{
         top: 30%;
         left: 10%;
+    }
+    .geometry#trig {
+        opacity: 0;
     }
 }
 </style>

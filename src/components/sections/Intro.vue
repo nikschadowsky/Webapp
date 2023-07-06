@@ -1,6 +1,4 @@
 <script>
-
-import { getRandomInt } from "../../util.js"
 import RoundedTriangle from "../elements/RoundedTriangle.vue";
 import RoundedSquare from "../elements/RoundedSquare.vue";
 
@@ -47,7 +45,7 @@ export default {
             } else {
 
                 this.currentTextName += this.finalTextName.charAt(this.currentTextName.length);
-                setTimeout(this.typeCharacterOfName, this.typingSpeed + getRandomInt(50));
+                setTimeout(this.typeCharacterOfName, this.typingSpeed + this.getRandomInt(50));
             }
         },
         typeCharacterOfTitle() {
@@ -60,7 +58,7 @@ export default {
 
             } else {
                 this.currentTextTitle += this.finalTextTitle.charAt(this.currentTextTitle.length);
-                setTimeout(this.typeCharacterOfTitle, this.typingSpeed + getRandomInt(50));
+                setTimeout(this.typeCharacterOfTitle, this.typingSpeed + this.getRandomInt(50));
             }
         },
 
@@ -97,9 +95,10 @@ export default {
             let squares = document.getElementsByClassName("intro animated-square");
 
 
+        },
+        getRandomInt(max) {
+            return Math.floor(Math.random() * max)
         }
-
-
 
     }
 
