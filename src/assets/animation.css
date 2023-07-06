@@ -1,25 +1,115 @@
-:root{
+:root {
     --blink-animation: blink .8s infinite step-end;
-    --default-hover-transition: color .3s ease; 
+    --default-hover-transition: color .7s ease;
 }
-@keyframes typing-anim {
-    from {
-        width: 0
-    }
 
-    to {
-        width: 100%
-    }
+
+.caret-blink::after {
+    content: "_";
+    color: var(--accent-color);
+
+    animation: var(--blink-animation);
 }
+
 
 @keyframes blink {
 
     from,
     to {
-        color: var(--default-hover)
+        opacity: 1;
     }
 
     50% {
-        color: transparent
+        opacity: 0;
+    }
+}
+
+@keyframes visibility {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes rock {
+
+    from,
+    to {
+        rotate: 3deg;
+    }
+
+    50% {
+        rotate: -3deg;
+    }
+}
+
+/*LOADING ANIMATION*/
+
+.loading-icon {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 60px;
+}
+
+.loading-icon div {
+    display: inline-block;
+    position: absolute;
+    border-radius: 4px;
+    left: 8px;
+    width: 12px;
+    background: var(--accent-color);
+    animation: loading-icon-anim 1.3s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.loading-icon div:nth-child(1) {
+    left: 12px;
+    animation-delay: -0.28s;
+}
+
+.loading-icon div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.14s;
+}
+
+.loading-icon div:nth-child(3) {
+    left: 52px;
+    animation-delay: 0;
+}
+
+@keyframes loading-icon-anim {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%,
+    100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
+
+@keyframes wobble {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 360deg;
+    }
+
+    to {
+        rotate: 0deg;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        rotate: 360deg;
     }
 }

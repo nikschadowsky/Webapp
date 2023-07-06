@@ -1,15 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
 :root {
-    --background-color: #101010;
-    --accent-color: #00bdff;
-    --secondary-color: #0000ff5A;
-    --default-hover: white;
-    font-size: 18pt;
-    --max-site-width: 1600px;
-    --header-height: 2.25rem;
-    --max-indentation: 200px;
-    --max-content-width: calc(var(--max-site-width) - 2* var(--max-indentation));
+
+    --background-color: #10101a;
+    --text-color-dark-bg: rgb(245, 245, 245);
+    --comment-text-color-dark-bg: rgb(97, 97, 97);
+    --accent-color: rgb(78, 220, 255);
+    --accent-color-shadow: rgb(26, 69, 99);
+
+    --timeline-color: rgb(147, 147, 147);
+    --repository-color: rgb(120, 120, 120);
+
+    --gray-1: #000;
+
+    --font-default: 18pt;
+    --font-larger: 20pt;
+    --font-smaller: 12pt;
+
+    /* 34 211 34
+    104 131 59*/
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -20,21 +29,197 @@
 
     --color-gradient: radial-gradient(circle, var(--secondary-color) 10%, var(--background-color) 100%);
 
-    text-decoration: none;
-
     --swiper-theme-color: var(--accent-color);
-    --swiper-theme-color-hover: white; 
+    --swiper-theme-color-hover: white;
 
     --max-galery-width: var(--max-content-width);
     --max-galery-height: 600px;
+
+
+    font-size: 16pt;
 }
 
 
+.debug {
+    outline: 1px solid red;
+}
 
 * {
     top: 0;
     margin: 0;
     padding: 0;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Open Sans', serif;
+    text-decoration: none;
+    color: var(--text-color-dark-bg);
 }
 
+.link {
+    position: relative;
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.link::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0.0001);
+    transition: transform 250ms;
+
+    box-shadow: 0 3px 10px var(--accent-color-shadow);
+}
+
+.link:hover::after {
+
+    height: 2px;
+
+    transform-origin: center;
+    transform: scaleX(1);
+}
+
+.underline {
+    position: relative;
+    white-space: nowrap;
+}
+
+.underline::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+
+}
+
+.section {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+    width: 100%;
+
+    overflow-y: visible;
+
+
+}
+
+div.comment>p {
+    color: inherit;
+}
+
+.section:first-child {
+    padding-bottom: 1px;
+}
+
+.colored {
+    color: var(--accent-color);
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.comment {
+    color: var(--comment-text-color-dark-bg);
+
+}
+
+.italicized {
+    font-style: italic;
+}
+
+
+.checkmark {
+    list-style-type: none;
+}
+
+.checkmark::before {
+    color: lawngreen;
+    content: '\2713';
+    display: inline-block;
+
+    position: absolute;
+
+    padding: 0 0 0 6px;
+    top: 0;
+}
+
+.in-progress {
+    list-style-type: none;
+    height: 100%;
+
+    content: ' ';
+}
+
+.in-progress::before {
+    content: ' ';
+
+    position: absolute;
+
+    display: inline-block;
+
+    margin-left: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    width: 17px;
+    height: 17px;
+    border-color: yellow;
+    border-radius: 100%;
+
+    border-left: 2px dotted yellow;
+    border-top: 2px dotted yellow;
+    border-right: 2px solid yellow;
+    border-bottom: 2px solid yellow;
+
+    top: 20%;
+
+}
+
+.geometry {
+    position: absolute;
+
+    z-index: -10;
+
+}
+
+.about.header,
+.about-detailed.header {
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+.noscroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        font-size: 12pt;
+
+    }
+
+    .about.header,
+    .about-detailed.header {
+        padding-bottom: 10px;
+        padding-top: 30px;
+    }
+
+    .in-progress::before {
+        width: 13px;
+        height: 13px;
+    }
+}
