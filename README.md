@@ -1,29 +1,22 @@
-# webapp
+# Webapp
 
-This template should help get you started developing with Vue 3 in Vite.
+Webapp ist ein Projekt, in dem ich mein eigenes Portfolio entwickle. Es ist mein erstes Projekt im Webdev-Umfeld. 
 
-## Recommended IDE Setup
+Es ist in keinster Weise perfekt und das soll es auch nicht sein. Es dient mir jediglich als Playground, um mich auszuprobieren und weiterzuentwickeln. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Insides
 
-## Customize configuration
+Die Seite ist mit [Vue 3](https://vuejs.org) gebaut, mit [Vite](https://vitejs.dev/) entwickelt und mit [GSAP](https://greensock.com/gsap/) und [ScrollTrigger](https://greensock.com/scrolltrigger/) animiert. 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Version
+Das Projekt ist aktuell in Version 1.1 (obwohl Version 1.0 niemals das Licht der Welt erblicken konnte...🥲).
 
-## Project Setup
+## How to run
 
-```sh
-npm install
+1. Repository klonen
+2. Dependencies installieren
+3. Starten 
+
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
